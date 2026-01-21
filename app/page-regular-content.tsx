@@ -425,20 +425,28 @@ export default function HomeRegular() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {featuredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="bg-white rounded-xl overflow-hidden border-2 border-gray-200 hover:border-[var(--primary)] hover:shadow-xl transition-all"
-              >
-                <div className="aspect-square relative overflow-hidden bg-white">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
+            {featuredProducts.map((product, idx) => {
+              // Real Unsplash photos for products
+              const productImages = [
+                'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&q=80',
+                'https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&q=80',
+                'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&q=80',
+              ];
+              
+              return (
+                <div
+                  key={product.id}
+                  className="bg-white rounded-xl overflow-hidden border-2 border-gray-200 hover:border-[var(--primary)] hover:shadow-xl transition-all group"
+                >
+                  <div className="aspect-square relative overflow-hidden bg-white">
+                    <Image
+                      src={productImages[idx] || productImages[0]}
+                      alt={product.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-2">
                     <Chip variant="secondary" size="sm">{product.category}</Chip>
@@ -475,7 +483,8 @@ export default function HomeRegular() {
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
 
           <div className="text-center mt-10">
