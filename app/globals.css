@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+/* ===============================================
+   🎨 BAAM STUDIO - CENTRALIZED THEME SYSTEM
+   ===============================================
+   Change colors here to update ENTIRE site theme
+   Perfect for multi-client deployment
+   =============================================== */
+
+:root {
+  /* ========================================
+     PRIMARY COLORS (Main brand identity)
+     ======================================== */
+  --primary: #DB2777;           /* Pink-600 - Elegant & Feminine */
+  --primary-dark: #BE185D;      /* Pink-700 - For hovers */
+  --primary-light: #EC4899;     /* Pink-500 - Lighter variant */
+  --primary-50: #FDF2F8;        /* Pink-50 - Very light tint */
+  --primary-100: #FCE7F3;       /* Pink-100 - Light tint */
+
+  /* ========================================
+     SECONDARY COLORS (Accent/highlight)
+     ======================================== */
+  --secondary: #A855F7;         /* Purple-500 - Luxury & Creative */
+  --secondary-dark: #9333EA;    /* Purple-600 - Darker */
+  --secondary-light: #C084FC;   /* Purple-400 - Lighter */
+  --secondary-50: #FAF5FF;      /* Purple-50 - Very light tint */
+  --secondary-100: #F3E8FF;     /* Purple-100 - Light tint */
+
+  /* ========================================
+     BACKDROP/BACKGROUND COLORS
+     ======================================== */
+  --backdrop-primary: #FDF2F8;     /* Pink-50 - Soft feminine */
+  --backdrop-secondary: #FAF5FF;   /* Purple-50 - Elegant accent */
+  --backdrop-gradient-start: var(--backdrop-primary);
+  --backdrop-gradient-middle: var(--backdrop-secondary);
+  --backdrop-gradient-end: var(--backdrop-primary);
+
+  /* ========================================
+     TOP BAR (Header contact bar)
+     ======================================== */
+  --topbar-bg: var(--primary);
+  --topbar-text: #ffffff;
+  --topbar-hover: var(--primary-light);
+
+  /* ========================================
+     HERO SECTION
+     ======================================== */
+  --hero-bg-start: var(--backdrop-primary);
+  --hero-bg-middle: var(--backdrop-secondary);
+  --hero-bg-end: var(--backdrop-primary);
+  --hero-title-color: #0f172a;      /* slate-900 */
+  --hero-tagline-color: #374151;    /* gray-700 */
+  --hero-text-color: #4b5563;       /* gray-600 */
+
+  /* ========================================
+     CTA BUTTONS (Call-to-action)
+     ======================================== */
+  --cta-primary-bg: var(--primary);
+  --cta-primary-hover: var(--primary-dark);
+  --cta-primary-text: #ffffff;
+  
+  --cta-secondary-bg: transparent;
+  --cta-secondary-border: var(--primary);
+  --cta-secondary-text: var(--primary);
+  --cta-secondary-hover-bg: var(--primary-50);
+
+  /* ========================================
+     STATS BAR (Green statistics section)
+     ======================================== */
+  --stats-bg-start: var(--primary);
+  --stats-bg-end: var(--primary-dark);
+  --stats-text: #ffffff;
+  --stats-icon-bg: rgba(255, 255, 255, 0.2);
+
+  /* ========================================
+     CORE SURFACES & BACKGROUNDS
+     ======================================== */
+  --bg: #fbfaf7;                /* Warm paper base */
+  --surface: #ffffff;           /* Cards & panels */
+  --surface-2: #f6f7f7;         /* Subtle sections */
+  
+  /* ========================================
+     TEXT COLORS
+     ======================================== */
+  --text: #0f172a;              /* slate-900 - Primary text */
+  --text-muted: #475569;        /* slate-600 - Muted text */
+  --text-light: #64748b;        /* slate-500 - Light text */
+  
+  /* ========================================
+     BORDERS & DIVIDERS
+     ======================================== */
+  --border: rgba(15, 23, 42, 0.08);
+  --border-light: rgba(15, 23, 42, 0.05);
+
+  /* ========================================
+     SHADOWS & EFFECTS
+     ======================================== */
+  --radius: 16px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 1px rgba(15, 23, 42, 0.04);
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+
+  /* ========================================
+     LAYOUT & SPACING
+     ======================================== */
+  --container: 72rem;           /* ~1152px */
+  --section-py: 5rem;          /* Vertical section padding */
+
+  /* ========================================
+     TYPOGRAPHY - Simplified 5-Size System
+     ======================================== */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* SIMPLIFIED TEXT SIZES */
+  --text-display: 3rem;        /* 48px - Hero titles only */
+  --text-heading: 2.25rem;     /* 36px - Section titles */
+  --text-subheading: 1.25rem;  /* 20px - Card titles, emphasis */
+  --text-body: 1rem;           /* 16px - Regular text (DEFAULT) */
+  --text-small: 0.875rem;      /* 14px - Meta, tags, labels */
+  
+  /* FONT WEIGHTS */
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  
+  /* LINE HEIGHTS */
+  --leading-tight: 1.25;       /* For large headings */
+  --leading-normal: 1.5;       /* Default */
+  --leading-relaxed: 1.625;    /* For body text */
+
+  /* ========================================
+     LEGACY SUPPORT (Keep for compatibility)
+     ======================================== */
+  --brand: var(--primary);
+  --brand-2: var(--primary-dark);
+  --accent: var(--secondary);
+}
+
+/* Keep your existing @theme mapping, but point it at the new tokens */
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+/* Optional dark mode (clean, not neon) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #070a0f;
+    --surface: #0b1220;
+    --surface-2: #0f172a;
+    --text: #e5e7eb;
+    --muted: #a1a1aa;
+    --muted-2: #94a3b8;
+    --border: rgba(226, 232, 240, 0.12);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(900px 500px at 15% 0%, rgba(15, 118, 110, 0.08), transparent 55%),
+    radial-gradient(900px 500px at 85% 10%, rgba(180, 83, 9, 0.06), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+/* Better default selection */
+::selection {
+  background: rgba(15, 118, 110, 0.18);
+}
+
+/* Links */
+a {
+  text-underline-offset: 4px;
+}
+
+/* A nicer “container” if you want to use it later */
+.container {
+  max-width: var(--container);
+}
+
+/* Global polish for common elements (works even if you don't touch JSX) */
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.02em;
+}
+
+/* Only apply to paragraphs that don't have explicit text color */
+p:not([class*="text-"]) {
+  color: color-mix(in srgb, var(--text) 72%, transparent);
+}
+
+/* Form elements look more premium */
+input,
+textarea,
+select {
+  border-radius: calc(var(--radius) - 6px);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+/* Subtle “card” look when you use white surfaces */
+.card-surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+/* A tasteful divider utility */
+.divider {
+  border-top: 1px solid var(--border);
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===============================================
+   SIMPLIFIED TYPOGRAPHY UTILITIES
+   Use these classes for consistent sizing
+   =============================================== */
+.text-display {
+  font-size: var(--text-display);
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-bold);
+}
+
+.text-heading {
+  font-size: var(--text-heading);
+  line-height: var(--leading-tight);
+  font-weight: var(--weight-bold);
+}
+
+.text-subheading {
+  font-size: var(--text-subheading);
+  line-height: var(--leading-normal);
+  font-weight: var(--weight-semibold);
+}
+
+.text-body {
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+  font-weight: var(--weight-normal);
+}
+
+.text-small {
+  font-size: var(--text-small);
+  line-height: var(--leading-normal);
+  font-weight: var(--weight-normal);
+}
