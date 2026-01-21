@@ -9,545 +9,539 @@ export interface BlogPost {
   category: string;
   author: string;
   type: ContentType;
-  readTime?: string; // For articles (e.g., "5 min read")
-  videoUrl?: string; // YouTube/Vimeo embed URL
-  videoDuration?: string; // For videos (e.g., "12:34")
-  featuredImage?: string; // Path to featured image
-  thumbnail?: string; // Video thumbnail
-  featured?: boolean; // Mark as featured content
+  readTime?: string;
+  videoUrl?: string;
+  videoDuration?: string;
+  featuredImage?: string;
+  thumbnail?: string;
+  featured?: boolean;
   tags?: string[];
 }
 
 export const blogPosts: BlogPost[] = [
   // FEATURED ARTICLE
   {
-    slug: 'benefits-of-acupuncture',
-    title: 'The Science Behind Acupuncture: How It Works',
+    slug: 'ultimate-guide-hair-color-maintenance',
+    title: 'Ultimate Guide to Hair Color Maintenance',
     date: '2024-12-15',
-    excerpt: 'Discover how acupuncture stimulates your body\'s natural healing mechanisms through both traditional wisdom and modern research. Learn about the neurological and biochemical effects of this ancient practice.',
-    content: `Acupuncture has been practiced for thousands of years, and modern research is now revealing the scientific mechanisms behind its effectiveness.
+    excerpt: 'Keep your hair color vibrant and beautiful longer with these expert tips from our colorists. Learn the best products, techniques, and routines for maintaining gorgeous color.',
+    content: `# Ultimate Guide to Hair Color Maintenance
 
-## How Acupuncture Works
+Investing in professional hair color is just the beginning. Here's how to keep it looking salon-fresh for weeks.
 
-From a Traditional Chinese Medicine perspective, acupuncture works by restoring the flow of Qi (vital energy) through meridians in the body. When Qi flows freely, the body maintains health and balance.
+## The Right Products Matter
 
-Modern research shows that acupuncture:
-- Stimulates the nervous system to release pain-relieving endorphins
-- Reduces inflammation through neurological pathways
-- Improves blood circulation to treatment areas
-- Modulates stress hormones and promotes relaxation
-- Enhances the body's natural healing responses
+Color-treated hair needs special care:
+- Sulfate-free shampoo and conditioner
+- Color-depositing treatments weekly
+- Deep conditioning masks bi-weekly
+- Heat protectant before styling
+- Purple shampoo for blondes
 
-## Common Conditions Treated
+## Washing Techniques
 
-Acupuncture has been shown to be effective for:
-- Chronic pain (back, neck, shoulders, joints)
-- Headaches and migraines
-- Stress, anxiety, and depression
-- Insomnia and sleep disturbances
-- Digestive issues
-- Allergies and sinus problems
-- Women's health concerns
+- Wait 48-72 hours before first wash
+- Use lukewarm water (not hot!)
+- Wash 2-3 times per week maximum
+- Focus shampoo on scalp, conditioner on ends
+- Rinse thoroughly with cool water
 
-## What to Expect
+## Protect Your Investment
 
-During an acupuncture treatment, very thin needles (about the width of a hair) are gently inserted at specific points. Most patients feel minimal to no discomfort and find the experience deeply relaxing.
-
-## The Research
-
-Multiple studies, including research from the National Institutes of Health, have confirmed acupuncture's effectiveness for various conditions. It's recognized by the World Health Organization as a valid treatment for over 100 conditions.
-
-If you're interested in exploring how acupuncture can support your health, we'd be happy to discuss your specific needs during a consultation.`,
-    category: 'Acupuncture',
-    author: 'Dr. Huang',
+- Limit heat styling when possible
+- Use UV protection products in summer
+- Avoid chlorine and salt water
+- Schedule regular toning appointments
+- Touch up roots every 6-8 weeks`,
+    category: 'Hair Care',
+    author: 'Sophia Martinez',
     type: 'article',
     readTime: '8 min read',
-    featuredImage: '/images/blog/acupuncture-science.jpg',
+    featuredImage: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80',
     featured: true,
-    tags: ['Acupuncture', 'Pain Relief', 'Science', 'Research'],
+    tags: ['hair color', 'hair care', 'maintenance', 'tips'],
   },
 
-  // ARTICLE 2
+  // MORE ARTICLES
   {
-    slug: 'chinese-herbs-101',
-    title: 'Chinese Herbal Medicine: A Beginner\'s Guide',
-    date: '2024-12-01',
-    excerpt: 'Learn about the ancient art of Chinese herbal medicine and how personalized formulas can support your health. Understand the principles behind herbal prescriptions and what to expect.',
-    content: `Chinese herbal medicine is one of the oldest and most comprehensive systems of plant-based healing in the world, with over 3,000 years of documented use.
+    slug: 'choose-perfect-haircut',
+    title: 'How to Choose Your Perfect Haircut',
+    date: '2024-12-10',
+    excerpt: 'Finding the right haircut for your face shape, hair type, and lifestyle. Our expert stylists share their professional tips for choosing a flattering cut.',
+    content: `# How to Choose Your Perfect Haircut
 
-## What is Chinese Herbal Medicine?
+The perfect haircut considers your face shape, hair texture, and daily routine.
 
-Unlike Western herbs which are often used individually, Chinese herbs are typically combined in formulas that work synergistically. Each formula is carefully balanced to address your unique constitution and health concerns.
+## Face Shape Guide
 
-## How Herbs Are Prescribed
+- Oval: Lucky you - almost any style works!
+- Round: Add height, avoid width
+- Square: Soften angles with layers
+- Heart: Balance with chin-length cuts
+- Long: Create width with volume
 
-A Chinese herbal prescription is created based on:
-- Your TCM diagnosis (patterns of imbalance)
-- Your unique constitution
-- Current symptoms and health goals
-- Other treatments you're receiving
+## Consider Your Hair Type
 
-## Common Forms
-
-Herbs can be provided as:
-- **Granules**: Concentrated powder that dissolves in hot water
-- **Pills/Capsules**: Convenient for on-the-go
-- **Raw Herbs**: Traditional decoction method
-- **Tinctures**: Liquid extracts
-
-## Safety and Quality
-
-We use high-quality herbs from reputable suppliers that test for:
-- Heavy metals and contaminants
-- Correct botanical identification  
-- Potency and efficacy
-
-All formulas are prescribed by a licensed herbalist and monitored for your safety and results.
-
-## What to Expect
-
-Most people notice initial improvements within 2-4 weeks. Formulas are adjusted as your condition changes, ensuring optimal support throughout your healing journey.`,
-    category: 'Herbal Medicine',
-    author: 'Dr. Huang',
+Different textures require different approaches...`,
+    category: 'Hair Care',
+    author: 'Emma Thompson',
     type: 'article',
     readTime: '6 min read',
-    featuredImage: '/images/blog/herbal-medicine.jpg',
-    featured: false,
-    tags: ['Herbal Medicine', 'Natural Remedies', 'TCM Basics'],
+    featuredImage: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80',
+    tags: ['haircut', 'styling', 'tips'],
   },
 
-  // VIDEO 1 - FEATURED
   {
-    slug: 'acupuncture-treatment-demo',
-    title: 'What to Expect During Your First Acupuncture Visit',
-    date: '2024-11-20',
-    excerpt: 'Watch this comprehensive video guide showing exactly what happens during an acupuncture treatment, from consultation to needle insertion. Perfect for first-time patients.',
-    content: 'Video content - see embedded player',
-    category: 'Acupuncture',
-    author: 'Dr. Huang',
-    type: 'video',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with actual video
-    videoDuration: '12:45',
-    thumbnail: '/images/blog/video-acupuncture-demo.jpg',
-    featured: true,
-    tags: ['Acupuncture', 'Tutorial', 'New Patients'],
-  },
+    slug: 'skincare-routine-by-age',
+    title: 'Skincare Routine for Every Age',
+    date: '2024-12-08',
+    excerpt: 'Your skin needs change as you age. Our lead esthetician shares age-appropriate skincare routines for your 20s, 30s, 40s, and beyond.',
+    content: `# Skincare Routine for Every Age
 
-  // ARTICLE 3
-  {
-    slug: 'seasonal-wellness-tips',
-    title: 'Traditional Chinese Medicine Seasonal Wellness Tips for Winter',
-    date: '2024-11-15',
-    excerpt: 'Learn how to stay healthy during winter using Traditional Chinese Medicine principles. Discover foods, herbs, and practices that support your immune system and energy during the cold months.',
-    content: `In Traditional Chinese Medicine, each season has specific qualities and requires different approaches to maintain optimal health.
+Skincare isn't one-size-fits-all. Here's what to focus on at every age.
 
-## Winter According to TCM
+## In Your 20s
+- Focus: Prevention and protection
+- Key products: Cleanser, moisturizer, SPF
+- Concerns: Acne, oiliness, sun damage prevention
 
-Winter is associated with the Water element and the Kidney system in TCM. This season calls for:
-- Conserving energy rather than expending it
-- Nourishing the body with warming foods
-- Getting adequate rest and sleep
-- Protecting yourself from cold and wind
+## In Your 30s
+- Focus: First signs of aging
+- Add: Antioxidant serum, eye cream, retinol
+- Concerns: Fine lines, uneven tone
 
-## Winter Wellness Strategies
-
-### Dietary Recommendations
-- Eat warming foods: soups, stews, bone broths
-- Include root vegetables, dark leafy greens
-- Use warming spices: ginger, cinnamon, garlic
-- Drink warm beverages, avoid cold drinks
-- Reduce raw, cold foods
-
-### Lifestyle Practices
-- Go to bed earlier, wake up with sunrise
-- Keep your lower back and feet warm
-- Practice gentle exercises like Tai Chi or Qi Gong
-- Minimize stress and conserve energy
-- Stay well-hydrated
-
-### Acupuncture Support
-Winter acupuncture treatments can:
-- Boost immune function
-- Support kidney and adrenal health
-- Improve circulation
-- Prevent seasonal illness
-- Maintain energy levels
-
-## Prevention is Key
-
-The best time to strengthen your immune system is before you get sick. Consider starting acupuncture and herbal support in early winter to stay healthy throughout the season.`,
-    category: 'Wellness',
-    author: 'Dr. Huang',
+## In Your 40s+
+- Focus: Firming and brightening
+- Add: Peptides, vitamin C, richer moisturizers
+- Concerns: Wrinkles, loss of elasticity, age spots`,
+    category: 'Skincare',
+    author: 'Isabella Rose',
     type: 'article',
     readTime: '7 min read',
-    featuredImage: '/images/blog/winter-wellness.jpg',
-    featured: false,
-    tags: ['Seasonal Health', 'Prevention', 'Wellness', 'Winter'],
+    featuredImage: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&q=80',
+    tags: ['skincare', 'anti-aging', 'routine'],
   },
 
-  // VIDEO 2
   {
-    slug: 'cupping-therapy-explained',
-    title: 'Cupping Therapy: Benefits and What to Expect',
-    date: '2024-11-10',
-    excerpt: 'Watch Dr. Huang demonstrate cupping therapy and explain how this ancient technique releases tension, improves circulation, and supports healing.',
-    content: 'Video content - see embedded player',
-    category: 'Treatments',
-    author: 'Dr. Huang',
-    type: 'video',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with actual video
-    videoDuration: '8:30',
-    thumbnail: '/images/blog/video-cupping-demo.jpg',
-    featured: false,
-    tags: ['Cupping', 'Tutorial', 'Pain Relief'],
-  },
+    slug: 'bridal-beauty-timeline',
+    title: 'Bridal Hair & Makeup Timeline',
+    date: '2024-12-05',
+    excerpt: 'Planning your wedding beauty? Our bridal specialist shares the perfect timeline from engagement to wedding day for flawless bridal beauty.',
+    content: `# Bridal Hair & Makeup Timeline
 
-  // ARTICLE 4
-  {
-    slug: 'stress-relief-with-tcm',
-    title: '5 TCM Techniques for Natural Stress Relief',
-    date: '2024-11-05',
-    excerpt: 'Feeling overwhelmed? Discover five Traditional Chinese Medicine techniques you can use to manage stress naturally, from acupressure points to breathing exercises.',
-    content: `Modern life brings constant stress, but Traditional Chinese Medicine offers time-tested tools for finding calm and balance.
+Perfect wedding day beauty requires planning. Here's your complete timeline.
 
-## 1. Acupressure Points for Instant Relief
+## 6-12 Months Before
+- Book your trial session
+- Start skincare regimen
+- Consider hair changes (color, extensions)
+- Research inspiration photos
 
-### Heart 7 (Shen Men - "Spirit Gate")
-Location: On the wrist crease, in line with your pinky finger
-How to use: Apply gentle pressure for 2-3 minutes
-Benefits: Calms anxiety, promotes peaceful sleep
+## 3-6 Months Before
+- Hair trial appointment
+- Finalize hair and makeup looks
+- Book wedding day appointments
+- Start intensive skincare
 
-### Pericardium 6 (Nei Guan - "Inner Gate")
-Location: 2-3 finger widths above your wrist crease, between the tendons
-How to use: Press firmly for 1-2 minutes on each wrist
-Benefits: Reduces anxiety, relieves nausea, calms the mind
+## 1 Month Before
+- Final hair trim
+- Lash extensions if desired
+- Professional facial series
+- Confirm all appointments
 
-## 2. Breathing Exercises
+## Wedding Week
+- No new skincare products
+- Keep routine simple
+- Stay hydrated
+- Get plenty of sleep
 
-Try this simple Qi Gong breathing:
-- Breathe in slowly through your nose for 4 counts
-- Hold for 4 counts
-- Exhale slowly through your mouth for 6 counts
-- Repeat 5-10 times
-
-This activates your parasympathetic nervous system and promotes calm.
-
-## 3. Herbal Support
-
-Consider these calming herbs:
-- Chamomile tea for gentle relaxation
-- Passionflower for nervous tension
-- Custom Chinese herbal formulas for chronic stress
-
-## 4. Dietary Adjustments
-
-TCM recommends:
-- Reduce caffeine and sugar
-- Eat regular, warm meals
-- Include calming foods like oats, dates, mushrooms
-- Avoid late-night eating
-
-## 5. Regular Acupuncture
-
-Weekly acupuncture treatments can:
-- Regulate stress hormones
-- Improve sleep quality
-- Reduce physical tension
-- Support emotional balance
-- Build resilience to stress
-
-Remember, stress management is a practice. Start with one technique and build from there.`,
-    category: 'Wellness',
-    author: 'Dr. Huang',
-    type: 'article',
-    readTime: '9 min read',
-    featuredImage: '/images/blog/stress-relief.jpg',
-    featured: false,
-    tags: ['Stress Relief', 'Mental Health', 'Self-Care', 'Acupressure'],
-  },
-
-  // VIDEO 3
-  {
-    slug: 'herbal-consultation-walkthrough',
-    title: 'Chinese Herbal Medicine Consultation: What Happens',
-    date: '2024-10-28',
-    excerpt: 'Take a behind-the-scenes look at a Chinese herbal medicine consultation. Learn how formulas are customized and what questions you can expect.',
-    content: 'Video content - see embedded player',
-    category: 'Herbal Medicine',
-    author: 'Dr. Huang',
-    type: 'video',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with actual video
-    videoDuration: '15:20',
-    thumbnail: '/images/blog/video-herbal-consultation.jpg',
-    featured: false,
-    tags: ['Herbal Medicine', 'Consultation', 'Tutorial'],
-  },
-
-  // ARTICLE 5
-  {
-    slug: 'fertility-support-with-acupuncture',
-    title: 'How Acupuncture Supports Natural Fertility',
-    date: '2024-10-20',
-    excerpt: 'Understanding how acupuncture and Traditional Chinese Medicine can support reproductive health, regulate cycles, and optimize fertility naturally.',
-    content: `Traditional Chinese Medicine has been supporting fertility for thousands of years, with growing research validating its effectiveness.
-
-## How TCM Supports Fertility
-
-### Regulating the Menstrual Cycle
-Acupuncture helps:
-- Balance hormones naturally
-- Regulate cycle length and timing
-- Reduce PMS symptoms
-- Improve ovulation quality
-
-### Improving Reproductive Health
-- Increases blood flow to reproductive organs
-- Reduces stress (a major fertility factor)
-- Supports healthy endometrial lining
-- Balances FSH, LH, and other hormones
-
-### Supporting IVF and ART
-Many fertility clinics now recommend acupuncture alongside assisted reproductive technologies. Research shows it may:
-- Improve IVF success rates
-- Reduce side effects of medications
-- Support implantation
-- Reduce anxiety during treatment
-
-## Treatment Timeline
-
-Most patients receive acupuncture:
-- Weekly for 3-4 months before conception attempts
-- Throughout IVF cycles at key points
-- During early pregnancy for support
-
-## Herbal Medicine for Fertility
-
-Custom herbal formulas can:
-- Nourish blood and Yin
-- Tonify kidney essence
-- Regulate qi and blood flow
-- Support different phases of the cycle
-
-## Lifestyle Support
-
-We also address:
-- Stress management
-- Sleep quality
-- Dietary optimization
-- Exercise balance
-
-TCM fertility support works best with at least 3-4 months of consistent treatment to allow the body to regulate and optimize.`,
-    category: 'Women\'s Health',
-    author: 'Dr. Huang',
+## Wedding Day
+- Arrive with clean, dry hair
+- Skip moisturizer before makeup
+- Bring inspiration photos
+- Relax and enjoy!`,
+    category: 'Bridal',
+    author: 'Ava Williams',
     type: 'article',
     readTime: '10 min read',
-    featuredImage: '/images/blog/fertility-support.jpg',
-    featured: false,
-    tags: ['Fertility', 'Women\'s Health', 'IVF Support', 'Reproductive Health'],
+    featuredImage: 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&q=80',
+    tags: ['bridal', 'wedding', 'planning'],
   },
 
-  // VIDEO 4
   {
-    slug: 'pulse-diagnosis-explained',
-    title: 'The Art of Pulse Diagnosis in Traditional Chinese Medicine',
-    date: '2024-10-15',
-    excerpt: 'Discover the ancient diagnostic technique of pulse reading. Watch as Dr. Huang explains what we can learn from your pulse and how it guides treatment.',
-    content: 'Video content - see embedded player',
-    category: 'TCM Basics',
-    author: 'Dr. Huang',
-    type: 'video',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with actual video
-    videoDuration: '10:15',
-    thumbnail: '/images/blog/video-pulse-diagnosis.jpg',
-    featured: false,
-    tags: ['Diagnosis', 'TCM Basics', 'Educational'],
-  },
+    slug: 'hair-color-trends-2026',
+    title: 'Hair Color Trends 2026',
+    date: '2024-12-01',
+    excerpt: 'The hottest hair color trends for 2026 according to our master colorists. From subtle balayage to bold fashion colors.',
+    content: `# Hair Color Trends 2026
 
-  // ARTICLE 6
-  {
-    slug: 'pain-management-naturally',
-    title: 'Natural Pain Management: TCM Alternatives to Medication',
-    date: '2024-10-10',
-    excerpt: 'Explore natural, effective approaches to managing chronic pain through acupuncture, herbs, and lifestyle modifications without pharmaceutical side effects.',
-    content: `Chronic pain affects millions, but there are effective natural alternatives to long-term pain medication.
+Stay ahead of the curve with these trending hair colors for the new year.
 
-## TCM Approach to Pain
+## Top Trends
 
-In Traditional Chinese Medicine, pain is often understood as blocked or stagnant Qi and blood flow. Treatment focuses on:
-- Unblocking meridians
-- Improving circulation
-- Reducing inflammation
-- Addressing root causes
+### 1. Buttery Blonde
+Warm, golden tones that look natural and sun-kissed
 
-## Effective TCM Modalities for Pain
+### 2. Copper Renaissance  
+Rich, dimensional reds and coppers
 
-### Acupuncture
-- Releases endorphins (natural pain relievers)
-- Reduces inflammation
-- Improves local circulation
-- Addresses nerve pain
+### 3. Mocha Brown
+Deep, cool-toned brunettes with subtle highlights
 
-### Cupping Therapy
-- Releases deep muscle tension
-- Improves blood flow
-- Reduces fascial adhesions
-- Provides immediate relief
+### 4. Lived-In Balayage
+Low-maintenance, natural-looking dimension
 
-### Herbal Medicine
-- Anti-inflammatory formulas
-- Blood circulation enhancement
-- Nourishing damaged tissues
-- Long-term pain management
-
-### Tui Na Massage
-- Releases trigger points
-- Improves joint mobility
-- Reduces muscle spasm
-- Enhances flexibility
-
-## Lifestyle Modifications
-
-Pain management also involves:
-- Gentle stretching and movement
-- Stress reduction techniques
-- Sleep quality improvement
-- Anti-inflammatory diet
-- Proper ergonomics
-
-## The Advantage of Natural Pain Relief
-
-Unlike pain medications, TCM approaches:
-- Have minimal to no side effects
-- Address root causes, not just symptoms
-- Support overall health and wellbeing
-- Can be used long-term safely
-- Work synergistically with other treatments
-
-Many patients are able to reduce or eliminate pain medications under their doctor's supervision while using TCM therapies.`,
-    category: 'Pain Management',
-    author: 'Dr. Huang',
+### 5. Face-Framing Highlights
+Strategic placement around the face for brightness`,
+    category: 'Hair Color',
+    author: 'Olivia Chen',
     type: 'article',
-    readTime: '11 min read',
-    featuredImage: '/images/blog/pain-management.jpg',
-    featured: false,
-    tags: ['Pain Relief', 'Chronic Pain', 'Natural Medicine', 'Alternatives'],
+    readTime: '5 min read',
+    featuredImage: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80',
+    tags: ['trends', 'hair color', '2026'],
   },
 
-  // VIDEO 5
+  // VIDEOS
   {
-    slug: 'qi-gong-morning-routine',
-    title: 'Energizing Morning Qi Gong Routine (15 Minutes)',
-    date: '2024-10-05',
-    excerpt: 'Start your day with vitality! Follow along with this gentle Qi Gong routine designed to awaken your energy, improve circulation, and set a positive tone for your day.',
-    content: 'Video content - see embedded player',
-    category: 'Qi Gong',
-    author: 'Dr. Huang',
+    slug: '5-minute-everyday-makeup',
+    title: '5-Minute Everyday Makeup Tutorial',
+    date: '2024-11-28',
+    excerpt: 'Quick and easy everyday makeup that looks polished and professional. Perfect for busy mornings when you need to look put-together fast.',
+    content: 'Video tutorial on creating a simple, elegant everyday makeup look in just 5 minutes.',
+    category: 'Makeup',
+    author: 'Ava Williams',
     type: 'video',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with actual video
-    videoDuration: '15:42',
-    thumbnail: '/images/blog/video-qigong-morning.jpg',
-    featured: false,
-    tags: ['Qi Gong', 'Exercise', 'Morning Routine', 'Energy'],
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoDuration: '5:23',
+    thumbnail: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&q=80',
+    tags: ['makeup', 'tutorial', 'quick'],
   },
 
-  // ARTICLE 7
   {
-    slug: 'digestive-health-tcm',
-    title: 'Healing Digestive Issues with Traditional Chinese Medicine',
-    date: '2024-09-28',
-    excerpt: 'IBS, bloating, and digestive discomfort? Discover how TCM addresses the root causes of digestive issues through acupuncture, herbs, and dietary therapy.',
-    content: `Digestive health is fundamental to overall wellness in Traditional Chinese Medicine. The Spleen and Stomach systems are considered the foundation of health.
+    slug: 'how-to-blow-dry-like-pro',
+    title: 'How to Blow-Dry Your Hair Like a Pro',
+    date: '2024-11-25',
+    excerpt: 'Learn the professional techniques our stylists use to create smooth, bouncy blowouts. Step-by-step tutorial for salon-quality results at home.',
+    content: 'Professional blow-dry techniques demonstrated by our senior stylists.',
+    category: 'Hair Care',
+    author: 'Emma Thompson',
+    type: 'video',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoDuration: '8:45',
+    thumbnail: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80',
+    tags: ['hair', 'tutorial', 'blow-dry'],
+  },
 
-## TCM Understanding of Digestion
+  {
+    slug: 'curling-iron-techniques',
+    title: 'Curling Iron Techniques for Perfect Curls',
+    date: '2024-11-20',
+    excerpt: 'Master three different curling techniques for loose waves, tight curls, and everything in between. Professional tips for long-lasting curls.',
+    content: 'Step-by-step demonstration of curling iron techniques for various curl styles.',
+    category: 'Hair Styling',
+    author: 'Charlotte Lee',
+    type: 'video',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoDuration: '12:15',
+    thumbnail: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80',
+    tags: ['curls', 'tutorial', 'styling'],
+  },
 
-Unlike Western medicine which focuses on specific organs, TCM looks at:
-- Digestive "fire" and transformation ability
-- Dampness and phlegm accumulation
-- Qi stagnation in the digestive tract
-- Emotional factors affecting digestion
+  {
+    slug: 'facial-massage-tutorial',
+    title: 'Facial Massage for Glowing Skin',
+    date: '2024-11-18',
+    excerpt: 'Learn professional facial massage techniques to improve circulation, reduce puffiness, and achieve a natural glow. Easy to do at home!',
+    content: 'Professional facial massage techniques for home skincare routines.',
+    category: 'Skincare',
+    author: 'Isabella Rose',
+    type: 'video',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoDuration: '10:30',
+    thumbnail: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80',
+    tags: ['skincare', 'massage', 'tutorial'],
+  },
 
-## Common Digestive Patterns
+  {
+    slug: 'perfect-winged-eyeliner',
+    title: 'Perfect Winged Eyeliner Every Time',
+    date: '2024-11-15',
+    excerpt: 'Master the winged eyeliner with these foolproof techniques from our makeup artists. Works for any eye shape!',
+    content: 'Step-by-step tutorial for creating perfect winged eyeliner.',
+    category: 'Makeup',
+    author: 'Ava Williams',
+    type: 'video',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoDuration: '6:52',
+    thumbnail: 'https://images.unsplash.com/photo-1596462502278-27a107d1e2d8?w=800&q=80',
+    tags: ['makeup', 'eyeliner', 'tutorial'],
+  },
 
-### Spleen Qi Deficiency
-Symptoms: Bloating, fatigue after meals, loose stools, poor appetite
-Treatment: Tonifying herbs, moxibustion, dietary therapy
+  // MORE ARTICLES
+  {
+    slug: 'summer-hair-care-tips',
+    title: '10 Hair Care Tips for Summer',
+    date: '2024-11-12',
+    excerpt: 'Protect your hair from sun, chlorine, and heat damage this summer. Essential tips for keeping your hair healthy and beautiful all season long.',
+    content: `# 10 Hair Care Tips for Summer
 
-### Liver Qi Stagnation
-Symptoms: IBS, alternating bowel habits, stress-related symptoms
-Treatment: Acupuncture to smooth Liver Qi, stress management
+Summer can be tough on your hair. Follow these tips to keep it healthy.
 
-### Stomach Heat
-Symptoms: Acid reflux, burning pain, constant hunger
-Treatment: Clearing heat herbs, cooling foods
+## Protect from UV
+- Use products with UV filters
+- Wear a hat at the beach
+- Spray-in sun protectants
 
-## Treatment Approaches
+## Chlorine Protection  
+- Wet hair before swimming
+- Use leave-in conditioner
+- Rinse immediately after
+- Chelating shampoo weekly
 
-### Acupuncture
-Points to harmonize digestion, reduce inflammation, and regulate gut motility
+## Hydration is Key
+- Deep condition weekly
+- Hair masks for moisture
+- Drink plenty of water
+- Avoid over-washing`,
+    category: 'Hair Care',
+    author: 'Mia Johnson',
+    type: 'article',
+    readTime: '6 min read',
+    featuredImage: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80',
+    tags: ['summer', 'hair care', 'protection'],
+  },
 
-### Herbal Medicine
-Custom formulas to strengthen digestion and address specific patterns
+  {
+    slug: 'makeup-tips-beginners',
+    title: 'Makeup Tips for Beginners',
+    date: '2024-11-08',
+    excerpt: 'New to makeup? Start here! Our makeup artists share essential tips and must-have products for building your makeup collection.',
+    content: `# Makeup Tips for Beginners
 
-### Dietary Therapy
-Personalized recommendations based on your constitution:
-- Foods that strengthen digestion
-- Foods to avoid based on your pattern
-- Proper food combining
-- Eating habits and timing
+Starting your makeup journey? Here's what you need to know.
 
-## Success with Digestive Issues
+## Essential Products to Start
 
-Many patients see improvement within 4-6 weeks of consistent treatment. Digestive issues often respond very well to TCM because it addresses both physical and emotional factors.`,
-    category: 'Digestive Health',
-    author: 'Dr. Huang',
+1. Foundation or BB cream
+2. Concealer
+3. Mascara
+4. Blush
+5. Lip gloss or lipstick
+
+## Basic Application
+
+- Always start with clean, moisturized skin
+- Use primer for longevity
+- Blend, blend, blend!
+- Build coverage gradually
+- Set with powder or spray
+
+## Common Mistakes to Avoid
+
+- Wrong foundation shade
+- Too much product
+- Skipping blending
+- Harsh lines
+- Not cleaning brushes`,
+    category: 'Makeup',
+    author: 'Ava Williams',
+    type: 'article',
+    readTime: '7 min read',
+    featuredImage: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80',
+    tags: ['makeup', 'beginners', 'tips'],
+  },
+
+  {
+    slug: 'best-ingredients-anti-aging',
+    title: 'Best Ingredients for Anti-Aging',
+    date: '2024-11-05',
+    excerpt: 'Not all anti-aging ingredients are created equal. Learn which ones actually work and how to incorporate them into your skincare routine.',
+    content: `# Best Ingredients for Anti-Aging
+
+Science-backed ingredients that actually make a difference.
+
+## The Power Players
+
+### Retinol
+- Boosts collagen production
+- Reduces fine lines
+- Improves texture
+- Use at night only
+
+### Vitamin C
+- Brightens skin
+- Evens tone
+- Antioxidant protection
+- Use in morning
+
+### Hyaluronic Acid
+- Deep hydration
+- Plumps skin
+- Reduces appearance of lines
+- Use AM and PM
+
+### Peptides
+- Supports collagen
+- Firms skin
+- Gentle for sensitive skin
+- Great for mature skin`,
+    category: 'Skincare',
+    author: 'Isabella Rose',
     type: 'article',
     readTime: '9 min read',
-    featuredImage: '/images/blog/digestive-health.jpg',
-    featured: false,
-    tags: ['Digestive Health', 'IBS', 'Gut Health', 'Dietary Therapy'],
+    featuredImage: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80',
+    tags: ['anti-aging', 'skincare', 'ingredients'],
   },
 
-  // VIDEO 6
   {
-    slug: 'self-care-acupressure',
-    title: 'Self-Care Acupressure Points You Can Do at Home',
-    date: '2024-09-20',
-    excerpt: 'Learn powerful acupressure points for headaches, stress, digestion, and sleep that you can practice at home between treatments.',
-    content: 'Video content - see embedded player',
-    category: 'Self-Care',
-    author: 'Dr. Huang',
-    type: 'video',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Replace with actual video
-    videoDuration: '18:25',
-    thumbnail: '/images/blog/video-acupressure-home.jpg',
-    featured: false,
-    tags: ['Acupressure', 'Self-Care', 'Tutorial', 'Home Practice'],
+    slug: 'balayage-vs-highlights',
+    title: 'Balayage vs Highlights: Which is Right for You?',
+    date: '2024-11-01',
+    excerpt: 'Confused about the difference between balayage and traditional highlights? Our color experts explain both techniques and help you choose.',
+    content: `# Balayage vs Highlights
+
+Understanding the difference helps you get the look you want.
+
+## Traditional Highlights
+
+- Foil technique
+- More uniform placement
+- Root to tip lightening
+- Regular touch-ups needed
+- Defined, bright look
+
+## Balayage
+
+- Hand-painted technique
+- Natural, sun-kissed look
+- Softer regrowth
+- Lower maintenance
+- Dimensional color
+
+## Which to Choose?
+
+Consider your:
+- Desired look (natural vs dramatic)
+- Maintenance preference
+- Hair color and texture
+- Budget and time`,
+    category: 'Hair Color',
+    author: 'Olivia Chen',
+    type: 'article',
+    readTime: '5 min read',
+    featuredImage: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80',
+    tags: ['balayage', 'highlights', 'hair color'],
+  },
+
+  {
+    slug: 'lash-extension-care-guide',
+    title: 'How to Make Your Lash Extensions Last',
+    date: '2024-10-28',
+    excerpt: 'Get the most out of your lash extensions with proper aftercare. Expert tips from our lash technician for beautiful, long-lasting lashes.',
+    content: `# Lash Extension Care Guide
+
+Proper care makes your lash extensions last 6-8 weeks.
+
+## First 24 Hours
+
+- Keep completely dry
+- No makeup on lashes
+- Avoid steam and heat
+- Sleep on your back
+
+## Daily Care
+
+- Cleanse gently with lash-safe cleanser
+- Brush daily with spoolie
+- No oil-based products
+- Avoid rubbing eyes
+
+## What to Avoid
+
+- Waterproof mascara
+- Oil-based makeup removers
+- Sleeping face-down
+- Picking or pulling
+- Eyelash curlers`,
+    category: 'Beauty',
+    author: 'Harper Davis',
+    type: 'article',
+    readTime: '4 min read',
+    featuredImage: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=800&q=80',
+    tags: ['lashes', 'extensions', 'care'],
+  },
+
+  {
+    slug: 'keratin-treatment-guide',
+    title: 'Everything You Need to Know About Keratin Treatments',
+    date: '2024-10-25',
+    excerpt: 'Considering a keratin treatment? Learn what it is, how it works, and if it\'s right for your hair type from our treatment specialists.',
+    content: `# Keratin Treatment Guide
+
+Transform frizzy, unmanageable hair into smooth, sleek perfection.
+
+## What is Keratin Treatment?
+
+A semi-permanent smoothing treatment that:
+- Reduces frizz dramatically
+- Cuts styling time in half
+- Adds incredible shine
+- Lasts 3-6 months
+- Works on most hair types
+
+## The Process
+
+1. Deep cleansing (20 min)
+2. Application (45 min)
+3. Drying (30 min)
+4. Flat iron sealing (45 min)
+5. Total: 2.5-3 hours
+
+## Aftercare
+
+- Wait 3 days before washing
+- Use sulfate-free products
+- Avoid hair ties for 48 hours
+- No swimming for 1 week`,
+    category: 'Hair Treatments',
+    author: 'Sophia Martinez',
+    type: 'article',
+    readTime: '8 min read',
+    featuredImage: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80',
+    tags: ['keratin', 'treatment', 'hair'],
   },
 ];
 
-// Utility functions
-export function getAllBlogSlugs(): string[] {
-  return blogPosts.map((p) => p.slug);
-}
-
-export function getBlogPostBySlug(slug: string): BlogPost | undefined {
-  return blogPosts.find((p) => p.slug === slug);
-}
-
+// Helper functions
 export function getAllCategories(): string[] {
-  return Array.from(new Set(blogPosts.map((p) => p.category)));
+  const categories = Array.from(new Set(blogPosts.map((post) => post.category)));
+  return ['All', ...categories];
 }
 
 export function getFeaturedPosts(): BlogPost[] {
-  return blogPosts.filter((p) => p.featured);
+  return blogPosts.filter((post) => post.featured);
 }
 
-export function getPostsByType(type: ContentType): BlogPost[] {
-  return blogPosts.filter((p) => p.type === type);
+export function getPostBySlug(slug: string): BlogPost | undefined {
+  return blogPosts.find((post) => post.slug === slug);
 }
 
 export function getPostsByCategory(category: string): BlogPost[] {
-  return blogPosts.filter((p) => p.category === category);
+  if (category === 'All') return blogPosts;
+  return blogPosts.filter((post) => post.category === category);
+}
+
+export function getPostsByType(type: ContentType): BlogPost[] {
+  return blogPosts.filter((post) => post.type === type);
+}
+
+// Additional helper functions for blog slug pages
+export function getAllBlogSlugs(): string[] {
+  return blogPosts.map((post) => post.slug);
+}
+
+export function getBlogPostBySlug(slug: string): BlogPost | undefined {
+  return getPostBySlug(slug);
 }
 
 export default blogPosts;
