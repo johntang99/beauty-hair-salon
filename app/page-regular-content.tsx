@@ -197,7 +197,7 @@ export default function HomeRegular() {
                 'highlights-balayage': 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
                 'facials-skincare': 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80',
                 'makeup-application': 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80',
-                'lash-extensions': 'https://images.unsplash.com/photo-1583001308095-ad898d47fdbc?w=600&q=80',
+                'lash-extensions': 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
                 'bridal-packages': 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&q=80',
               };
               
@@ -362,7 +362,7 @@ export default function HomeRegular() {
                 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80',
                 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&q=80',
                 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&q=80',
-                'https://images.unsplash.com/photo-1595475884562-073c520e75e1?w=400&q=80',
+                'https://images.unsplash.com/photo-1524502397800-2eeaad7c3fe5?w=400&q=80',
                 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&q=80',
               ];
               

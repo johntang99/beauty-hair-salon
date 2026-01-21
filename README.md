@@ -37,12 +37,9 @@ npm install
 npm run build
 
 
-git init
 git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/johntang99/chinese-medicine-clinic.git
-git branch -M main
-git push -u origin main
+git commit -m "Update: your changes"
+git push
 
 
-curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_uTlXyzsqFsNiREZVGNYxzOMCC2zz/tSkPmum10W
+curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_zv4WSdb9n8PIy2BwmvHIgBTLyRGq/q46SsAW8Az
