@@ -24,9 +24,9 @@ export default function HomeCreative() {
   const heroImages = [
     'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80', // Salon interior
     'https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=600&q=80', // Hair styling
-    'https://images.unsplash.com/photo-1595475884562-073c520e75e1?w=600&q=80', // Makeup
-    'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80', // Hair washing
-    'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80', // Hair color
+    'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80', // Makeup application
+    'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80', // Hair washing
+    'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80', // Hair color/treatment
   ];
 
   // Default positions
