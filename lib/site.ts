@@ -83,13 +83,12 @@ export const siteConfig = {
     main: [
       { name: 'Home', href: '/' },
       { name: 'Services', href: '/services' },
+      { name: 'Products', href: '/products' },
       { name: 'Our Team', href: '/team' },
       { name: 'Gallery', href: '/gallery' },
       { name: 'Pricing', href: '/pricing' },
-      { name: 'Products', href: '/products' },
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Blog', href: '/blog' },
-      { name: 'Book Now', href: '/book' },
     ],
     footer: {
       services: [
