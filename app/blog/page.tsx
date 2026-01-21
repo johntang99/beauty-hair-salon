@@ -61,9 +61,9 @@ export default function BlogPage() {
       {/* Educational Disclaimer */}
       <section className="py-6 px-4 bg-white border-b border-gray-200">
         <div className="container mx-auto max-w-5xl">
-          <div className="bg-[var(--secondary-50)] border-l-4 border-amber-500 p-4 rounded-r-lg">
+          <div className="bg-gradient-to-r from-[var(--primary-50)] to-[var(--secondary-50)] border-l-4 border-[var(--primary)] p-4 rounded-r-lg">
             <p className="text-small text-gray-700">
-              <strong className="font-semibold">Educational Content:</strong> The information on this blog is for educational purposes only and is not intended to diagnose, treat, cure, or prevent any disease. Always consult with a licensed healthcare provider before starting any new treatment.
+              <strong className="font-semibold">Beauty Tips:</strong> The information on this blog is for educational and inspirational purposes. Results may vary. For personalized advice, book a consultation with our expert stylists and estheticians.
             </p>
           </div>
         </div>

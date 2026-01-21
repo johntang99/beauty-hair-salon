@@ -1,5 +1,6 @@
 import type { BlogPost } from '@/lib/blog';
 import Link from 'next/link';
+import Image from 'next/image';
 import Chip from '@/components/ui/Chip';
 import { Clock, User, Play, ArrowRight } from 'lucide-react';
 
@@ -10,6 +11,7 @@ interface FeaturedContentProps {
 
 export default function FeaturedContent({ post, onPlayVideo }: FeaturedContentProps) {
   const isVideo = post.type === 'video';
+  const imageUrl = isVideo ? post.thumbnail : post.featuredImage;
 
   return (
     <section className="py-12 px-4 bg-white">
@@ -20,13 +22,22 @@ export default function FeaturedContent({ post, onPlayVideo }: FeaturedContentPr
             <div className="relative">
               {isVideo ? (
                 <button onClick={onPlayVideo} className="block w-full h-full relative group/play">
-                  <div className="aspect-[16/10] lg:aspect-auto lg:h-full bg-gradient-to-br from-green-600/10 to-amber-600/10 relative">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-8xl mb-4 opacity-20">🎬</div>
-                        <p className="text-gray-600">Featured Video</p>
-                      </div>
-                    </div>
+                  <div className="aspect-[16/10] lg:aspect-auto lg:h-full relative overflow-hidden">
+                    {imageUrl ? (
+                      <>
+                        <Image
+                          src={imageUrl}
+                          alt={post.title}
+                          fill
+                          className="object-cover"
+                          sizes="50vw"
+                        />
+                        <div className="absolute inset-0 bg-black/20"></div>
+                      </>
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-pink-100 to-purple-100"></div>
+                    )}
+                    
                     {/* Play Button */}
                     <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover/play:bg-black/30 transition-all">
                       <div className="w-24 h-24 rounded-full bg-[var(--brand)] group-hover/play:bg-[var(--brand-2)] flex items-center justify-center shadow-2xl group-hover/play:scale-110 transition-all">
@@ -42,13 +53,23 @@ export default function FeaturedContent({ post, onPlayVideo }: FeaturedContentPr
                 </button>
               ) : (
                 <Link href={`/blog/${post.slug}`} className="block">
-                  <div className="aspect-[16/10] lg:aspect-auto lg:h-full bg-gradient-to-br from-green-600/10 to-amber-600/10 relative overflow-hidden group/img">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-8xl mb-4 opacity-20">📰</div>
-                        <p className="text-gray-600">Featured Article</p>
+                  <div className="aspect-[16/10] lg:aspect-auto lg:h-full relative overflow-hidden group/img">
+                    {imageUrl ? (
+                      <>
+                        <Image
+                          src={imageUrl}
+                          alt={post.title}
+                          fill
+                          className="object-cover group-hover/img:scale-105 transition-transform duration-500"
+                          sizes="50vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                      </>
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center">
+                        <p className="text-gray-500">Featured Article</p>
                       </div>
-                    </div>
+                    )}
                     <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/10 transition-all" />
                   </div>
                 </Link>
@@ -80,7 +101,7 @@ export default function FeaturedContent({ post, onPlayVideo }: FeaturedContentPr
               {post.tags && post.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-6">
                   {post.tags.map((tag, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-white text-gray-700 text-smallall font-medium rounded-full border border-gray-200">
+                    <span key={idx} className="px-3 py-1 bg-white text-gray-700 text-small font-medium rounded-full border border-gray-200">
                       {tag}
                     </span>
                   ))}
@@ -111,7 +132,7 @@ export default function FeaturedContent({ post, onPlayVideo }: FeaturedContentPr
               {isVideo ? (
                 <button
                   onClick={onPlayVideo}
-                  className="inline-flex items-center gap-2 bg-[var(--brand)] text-white px-8 py-4 rounded-lg hover:bg-[var(--brand-2)] font-semibold text-subheading transition-all shadow-lg"
+                  className="inline-flex items-center gap-2 bg-[var(--brand)] text-white px-8 py-4 rounded-lg hover:bg-[var(--brand-2)] font-semibold text-subheading transition-all shadow-lg w-fit"
                 >
                   <Play className="w-5 h-5" />
                   Watch Now
@@ -119,7 +140,7 @@ export default function FeaturedContent({ post, onPlayVideo }: FeaturedContentPr
               ) : (
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-2 bg-[var(--brand)] text-white px-8 py-4 rounded-lg hover:bg-[var(--brand-2)] font-semibold text-subheading transition-all shadow-lg"
+                  className="inline-flex items-center gap-2 bg-[var(--brand)] text-white px-8 py-4 rounded-lg hover:bg-[var(--brand-2)] font-semibold text-subheading transition-all shadow-lg w-fit"
                 >
                   Read Article
                   <ArrowRight className="w-5 h-5" />
