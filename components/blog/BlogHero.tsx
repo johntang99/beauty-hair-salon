@@ -1,18 +1,19 @@
+import Image from 'next/image';
 import { BookOpen, Video, Sparkles } from 'lucide-react';
 
 export default function BlogHero() {
   const features = [
     {
       icon: BookOpen,
-      text: 'Educational articles',
+      text: 'Beauty Tips & Guides',
     },
     {
       icon: Video,
-      text: 'Video tutorials',
+      text: 'Video Tutorials',
     },
     {
       icon: Sparkles,
-      text: 'Expert insights',
+      text: 'Style Inspiration',
     },
   ];
 
@@ -20,22 +21,25 @@ export default function BlogHero() {
     <section className="relative bg-gradient-to-br from-[var(--backdrop-primary)] via-[var(--backdrop-secondary)] to-[var(--backdrop-primary)] py-16 md:py-20 px-4 overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 right-10 w-64 h-64 bg-green-300 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-64 h-64 bg-amber-300 rounded-full blur-3xl"></div>
+        <div className="absolute top-10 right-10 w-64 h-64 rounded-full blur-3xl" style={{ backgroundColor: 'var(--primary)' }}></div>
+        <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full blur-3xl" style={{ backgroundColor: 'var(--secondary)' }}></div>
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div className="text-center lg:text-left">
+            <span className="inline-block px-4 py-2 bg-[var(--primary-100)] text-[var(--primary)] rounded-full text-small font-semibold mb-6">
+              BEAUTY BLOG
+            </span>
             <h1 className="text-display md:text-display font-bold text-gray-900 mb-6 leading-tight">
-              TCM Blog & Media
+              Beauty Tips & Inspiration
             </h1>
-            <p className="text-subheading text-[var(--brand)] font-medium mb-4">
-              Your Resource for Natural Healing & Wellness
+            <p className="text-subheading text-[var(--primary)] font-semibold mb-4">
+              Your guide to gorgeous hair and radiant skin
             </p>
-            <p className="text-subheading text-gray-600 leading-relaxed mb-8">
-              Educational articles, video tutorials, and expert insights on Traditional Chinese Medicine, wellness, and holistic health.
+            <p className="text-body text-gray-600 leading-relaxed mb-8">
+              Expert advice, tutorials, and inspiration from our professional stylists and estheticians. Learn the latest techniques, trends, and tips to look and feel your best.
             </p>
 
             {/* Features Row */}
@@ -47,8 +51,8 @@ export default function BlogHero() {
                     key={item.text}
                     className="flex flex-col items-center sm:items-start gap-3 bg-white/80 backdrop-blur rounded-xl p-4 border border-gray-200 shadow-sm"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-[color-mix(in_srgb,var(--brand)_10%,transparent)] flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-[var(--brand)]" />
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'color-mix(in srgb, var(--primary) 10%, transparent)' }}>
+                      <Icon className="w-5 h-5 text-[var(--primary)]" />
                     </div>
                     <span className="text-small font-semibold text-gray-900 text-center sm:text-left">{item.text}</span>
                   </div>
@@ -59,20 +63,25 @@ export default function BlogHero() {
 
           {/* Right Column - Hero Image */}
           <div className="relative lg:h-[500px] h-[350px] hidden md:block">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)] rounded-3xl overflow-hidden shadow-2xl">
-              <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-green-600/10 to-amber-600/10 relative p-8">
-                <div className="absolute top-10 left-10 w-24 h-24 bg-[var(--primary-50)]0/20 rounded-full"></div>
-                <div className="absolute bottom-10 right-10 w-32 h-32 bg-[var(--secondary-50)]0/20 rounded-full"></div>
-                
-                <div className="relative z-10 text-center">
-                  <div className="text-8xl mb-6">📚</div>
-                  <p className="text-gray-700 font-semibold text-subheading mb-2">Knowledge Hub</p>
-                  <p className="text-gray-600 text-small">Articles & videos to support your wellness</p>
+            <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1000&q=80"
+                alt="Beauty and hair styling"
+                fill
+                className="object-cover"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              
+              <div className="absolute bottom-8 left-8 right-8 text-white">
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
+                  <p className="font-semibold text-subheading mb-2">💇 Latest Beauty Trends</p>
+                  <p className="text-small opacity-90">Articles & tutorials updated weekly</p>
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-[var(--primary)] rounded-3xl opacity-10 -z-10"></div>
-            <div className="absolute -top-6 -left-6 w-48 h-48 bg-amber-600 rounded-3xl opacity-10 -z-10"></div>
+            <div className="absolute -bottom-6 -right-6 w-48 h-48 rounded-3xl opacity-10 -z-10" style={{ backgroundColor: 'var(--primary)' }}></div>
+            <div className="absolute -top-6 -left-6 w-48 h-48 rounded-3xl opacity-10 -z-10" style={{ backgroundColor: 'var(--secondary)' }}></div>
           </div>
         </div>
       </div>
