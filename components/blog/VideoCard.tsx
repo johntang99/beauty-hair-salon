@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/lib/blog';
+import Image from 'next/image';
 import Chip from '@/components/ui/Chip';
 import { Play, Clock, User } from 'lucide-react';
 
@@ -12,13 +13,23 @@ export default function VideoCard({ post, onPlay }: VideoCardProps) {
     <article className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-[var(--brand)] hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
       {/* Video Thumbnail with Play Button */}
       <button onClick={onPlay} className="block relative">
-        <div className="aspect-[16/9] bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)] relative overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-600/10 to-amber-600/10">
-            <div className="text-center">
-              <div className="text-display mb-2 opacity-30">🎬</div>
-              <p className="text-smallall text-gray-500">Video thumbnail</p>
+        <div className="aspect-[16/9] relative overflow-hidden bg-gray-100">
+          {post.thumbnail ? (
+            <Image
+              src={post.thumbnail}
+              alt={post.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)]">
+              <div className="text-center">
+                <div className="text-display mb-2 opacity-30">🎬</div>
+                <p className="text-small text-gray-500">Video thumbnail</p>
+              </div>
             </div>
-          </div>
+          )}
           
           {/* Play Button Overlay */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-all duration-300">
@@ -29,7 +40,7 @@ export default function VideoCard({ post, onPlay }: VideoCardProps) {
 
           {/* Duration Badge */}
           {post.videoDuration && (
-            <div className="absolute bottom-3 right-3 bg-black/80 text-white px-2 py-1 rounded text-smallall font-semibold">
+            <div className="absolute bottom-3 right-3 bg-black/80 text-white px-2 py-1 rounded text-small font-semibold">
               {post.videoDuration}
             </div>
           )}
@@ -40,15 +51,6 @@ export default function VideoCard({ post, onPlay }: VideoCardProps) {
               VIDEO
             </Chip>
           </div>
-
-          {/* Replace with actual thumbnail:
-          <Image
-            src={post.thumbnail || '/images/blog/default-video.jpg'}
-            alt={post.title}
-            fill
-            className="object-cover"
-          />
-          */}
         </div>
       </button>
 
@@ -57,7 +59,7 @@ export default function VideoCard({ post, onPlay }: VideoCardProps) {
         {/* Meta */}
         <div className="flex items-center gap-2 mb-3 flex-wrap">
           <Chip variant="secondary" size="sm">{post.category}</Chip>
-          <span className="text-smallall text-gray-500">{formatDate(post.date)}</span>
+          <span className="text-small text-gray-500">{formatDate(post.date)}</span>
         </div>
 
         {/* Title */}
@@ -76,7 +78,7 @@ export default function VideoCard({ post, onPlay }: VideoCardProps) {
         {post.tags && post.tags.length > 0 && (
           <div className="flex flex-wrap gap-1 mb-4">
             {post.tags.slice(0, 3).map((tag, idx) => (
-              <span key={idx} className="px-2 py-0.5 bg-gray-100 text-gray-600 text-smallall rounded">
+              <span key={idx} className="px-2 py-0.5 bg-gray-100 text-gray-600 text-small rounded">
                 {tag}
               </span>
             ))}
@@ -85,7 +87,7 @@ export default function VideoCard({ post, onPlay }: VideoCardProps) {
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-          <div className="flex items-center gap-4 text-smallall text-gray-500">
+          <div className="flex items-center gap-4 text-small text-gray-500">
             <span className="flex items-center gap-1">
               <User className="w-3 h-3" />
               {post.author}

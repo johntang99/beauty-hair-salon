@@ -1,5 +1,6 @@
 import type { BlogPost } from '@/lib/blog';
 import Link from 'next/link';
+import Image from 'next/image';
 import Chip from '@/components/ui/Chip';
 import { Clock, User, ArrowRight } from 'lucide-react';
 
@@ -12,23 +13,26 @@ export default function ArticleCard({ post }: ArticleCardProps) {
     <article className="bg-white rounded-xl border-2 border-gray-200 overflow-hidden hover:border-[var(--brand)] hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
       {/* Featured Image */}
       <Link href={`/blog/${post.slug}`} className="block">
-        <div className="aspect-[16/9] bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)] relative overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-600/10 to-amber-600/10">
-            <div className="text-center">
-              <div className="text-display mb-2 opacity-30">📖</div>
-              <p className="text-smallall text-gray-500">Featured image</p>
+        <div className="aspect-[16/9] relative overflow-hidden bg-gray-100">
+          {post.featuredImage ? (
+            <Image
+              src={post.featuredImage}
+              alt={post.title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[var(--backdrop-primary)] to-[var(--backdrop-secondary)]">
+              <div className="text-center">
+                <div className="text-display mb-2 opacity-30">📖</div>
+                <p className="text-small text-gray-500">Featured image</p>
+              </div>
             </div>
-          </div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
           {/* Overlay on hover */}
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
-          {/* Replace with actual image:
-          <Image
-            src={post.featuredImage || '/images/blog/default.jpg'}
-            alt={post.title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          */}
         </div>
       </Link>
 
@@ -37,7 +41,7 @@ export default function ArticleCard({ post }: ArticleCardProps) {
         {/* Meta */}
         <div className="flex items-center gap-2 mb-3 flex-wrap">
           <Chip variant="secondary" size="sm">{post.category}</Chip>
-          <span className="text-smallall text-gray-500">{formatDate(post.date)}</span>
+          <span className="text-small text-gray-500">{formatDate(post.date)}</span>
         </div>
 
         {/* Title */}
@@ -56,7 +60,7 @@ export default function ArticleCard({ post }: ArticleCardProps) {
         {post.tags && post.tags.length > 0 && (
           <div className="flex flex-wrap gap-1 mb-4">
             {post.tags.slice(0, 3).map((tag, idx) => (
-              <span key={idx} className="px-2 py-0.5 bg-gray-100 text-gray-600 text-smallall rounded">
+              <span key={idx} className="px-2 py-0.5 bg-gray-100 text-gray-600 text-small rounded">
                 {tag}
               </span>
             ))}
@@ -65,7 +69,7 @@ export default function ArticleCard({ post }: ArticleCardProps) {
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-          <div className="flex items-center gap-4 text-smallall text-gray-500">
+          <div className="flex items-center gap-4 text-small text-gray-500">
             <span className="flex items-center gap-1">
               <User className="w-3 h-3" />
               {post.author}
